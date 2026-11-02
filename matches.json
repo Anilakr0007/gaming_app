@@ -1,0 +1,110 @@
+[
+  {
+    "id": "ind-aus-t20-1",
+    "status": "LIVE",
+    "format": "1ST T20I",
+    "series": "AUSTRALIA TOUR OF INDIA, 2026",
+    "venue": "M. A. Chidambaram Stadium, Chennai",
+    "conditions": {"weather": "Partly cloudy", "temperature_c": 29, "humidity_pct": 68, "rain_chance_pct": 10, "wind_kph": 14, "pitch": "Dry, firm surface", "pitch_report": "A hard surface with even bounce; spin may become more influential as the match progresses."},
+    "start_time": "Today, 7:00 PM",
+    "teams": ["India", "Australia"],
+    "short_names": {"India": "IND", "Australia": "AUS"},
+    "colors": {"India": "#1688d4", "Australia": "#e5b72d"},
+    "scores": {
+      "India": {"runs": 186, "wickets": 4, "overs": "19.2", "run_rate": "9.62"},
+      "Australia": {"runs": 0, "wickets": 0, "overs": "0.0", "run_rate": "0.00"}
+    },
+    "summary": "India need 14 runs from 4 balls",
+    "highlight": true
+  },
+  {
+    "id": "eng-sa-test-2",
+    "status": "LIVE",
+    "format": "2ND TEST · DAY 3",
+    "series": "SOUTH AFRICA TOUR OF ENGLAND, 2026",
+    "venue": "Lord's, London",
+    "conditions": {"weather": "Cloudy intervals", "temperature_c": 14, "humidity_pct": 78, "rain_chance_pct": 35, "wind_kph": 18, "pitch": "Green-tinged, seam-friendly", "pitch_report": "Some grass and cool, humid air may offer early movement for seam bowlers."},
+    "start_time": "Day 3 · Session 2",
+    "teams": ["England", "South Africa"],
+    "short_names": {"England": "ENG", "South Africa": "SA"},
+    "colors": {"England": "#c43c55", "South Africa": "#2c8a57"},
+    "scores": {
+      "England": {"runs": 342, "wickets": 8, "overs": "97.3", "run_rate": "3.51"},
+      "South Africa": {"runs": 278, "wickets": 10, "overs": "83.1", "run_rate": "3.34"}
+    },
+    "summary": "England lead by 64 runs",
+    "highlight": false
+  },
+  {
+    "id": "pak-nz-odi-3",
+    "status": "UPCOMING",
+    "format": "3RD ODI",
+    "series": "NEW ZEALAND TOUR OF PAKISTAN, 2026",
+    "venue": "Gaddafi Stadium, Lahore",
+    "conditions": {"weather": "Clear and dry", "temperature_c": 25, "humidity_pct": 42, "rain_chance_pct": 2, "wind_kph": 8, "pitch": "Flat, batting-friendly surface", "pitch_report": "A firm, even surface is expected to reward timing; boundaries could be frequent if the outfield stays quick."},
+    "start_time": "Today, 8:30 PM",
+    "teams": ["Pakistan", "New Zealand"],
+    "short_names": {"Pakistan": "PAK", "New Zealand": "NZ"},
+    "colors": {"Pakistan": "#168455", "New Zealand": "#303943"},
+    "scores": {
+      "Pakistan": {"runs": 0, "wickets": 0, "overs": "0.0", "run_rate": "0.00"},
+      "New Zealand": {"runs": 0, "wickets": 0, "overs": "0.0", "run_rate": "0.00"}
+    },
+    "summary": "Match starts in 2h 15m",
+    "highlight": false
+  },
+  {
+    "id": "wi-sl-t20-4",
+    "status": "UPCOMING",
+    "format": "2ND T20I",
+    "series": "SRI LANKA TOUR OF WEST INDIES, 2026",
+    "venue": "Kensington Oval, Bridgetown",
+    "conditions": {"weather": "Warm with passing showers", "temperature_c": 28, "humidity_pct": 81, "rain_chance_pct": 45, "wind_kph": 21, "pitch": "Balanced surface with carry", "pitch_report": "Good carry should help pace early, while the surface may slow as it wears."},
+    "start_time": "Tomorrow, 11:00 PM",
+    "teams": ["West Indies", "Sri Lanka"],
+    "short_names": {"West Indies": "WI", "Sri Lanka": "SL"},
+    "colors": {"West Indies": "#c63a54", "Sri Lanka": "#2569bd"},
+    "scores": {
+      "West Indies": {"runs": 0, "wickets": 0, "overs": "0.0", "run_rate": "0.00"},
+      "Sri Lanka": {"runs": 0, "wickets": 0, "overs": "0.0", "run_rate": "0.00"}
+    },
+    "summary": "West Indies lead the series 1–0",
+    "highlight": false
+  },
+  {
+    "id": "ban-afg-odi-5",
+    "status": "RESULT",
+    "format": "2ND ODI",
+    "series": "AFGHANISTAN TOUR OF BANGLADESH, 2026",
+    "venue": "Sher-e-Bangla Stadium, Dhaka",
+    "conditions": {"weather": "Overcast and humid", "temperature_c": 27, "humidity_pct": 84, "rain_chance_pct": 30, "wind_kph": 10, "pitch": "Used, slow surface", "pitch_report": "A used surface may grip and turn, making clean timing harder as the innings develops."},
+    "start_time": "Completed",
+    "teams": ["Bangladesh", "Afghanistan"],
+    "short_names": {"Bangladesh": "BAN", "Afghanistan": "AFG"},
+    "colors": {"Bangladesh": "#23835a", "Afghanistan": "#3681c6"},
+    "scores": {
+      "Bangladesh": {"runs": 246, "wickets": 10, "overs": "48.2", "run_rate": "5.09"},
+      "Afghanistan": {"runs": 249, "wickets": 6, "overs": "45.1", "run_rate": "5.51"}
+    },
+    "summary": "Afghanistan won by 4 wickets",
+    "highlight": false
+  },
+  {
+    "id": "ire-zim-t20-6",
+    "status": "RESULT",
+    "format": "1ST T20I",
+    "series": "ZIMBABWE TOUR OF IRELAND, 2026",
+    "venue": "Bready Cricket Club, Derry",
+    "conditions": {"weather": "Clear and dry", "temperature_c": 25, "humidity_pct": 42, "rain_chance_pct": 2, "wind_kph": 8, "pitch": "Flat, batting-friendly surface", "pitch_report": "A firm, even surface is expected to reward timing; boundaries could be frequent if the outfield stays quick."},
+    "start_time": "Completed",
+    "teams": ["Ireland", "Zimbabwe"],
+    "short_names": {"Ireland": "IRE", "Zimbabwe": "ZIM"},
+    "colors": {"Ireland": "#27845a", "Zimbabwe": "#d8ae36"},
+    "scores": {
+      "Ireland": {"runs": 174, "wickets": 7, "overs": "20.0", "run_rate": "8.70"},
+      "Zimbabwe": {"runs": 158, "wickets": 9, "overs": "20.0", "run_rate": "7.90"}
+    },
+    "summary": "Ireland won by 16 runs",
+    "highlight": false
+  }
+]

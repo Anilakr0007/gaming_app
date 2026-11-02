@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f2f4ee" />
+    <meta name="description" content="Live cricket scores, match updates and scorecards." />
+    <title>Boundary — Cricket, in the moment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <link rel="stylesheet" href="/static/conditions.css" />
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Boundary home"><span class="brand-mark">B</span><span>boundary<span class="brand-period">.</span></span></a>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="#scores">Scores</a>
+        <a class="nav-link" href="#series">Series</a>
+        <a class="nav-link" href="#news">News</a>
+      </nav>
+      <div class="topbar-right"><span class="live-clock"><span class="live-dot"></span> LIVE NOW</span><button class="icon-button" id="refresh-button" type="button" title="Refresh scores" aria-label="Refresh scores"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M5.6 9a7 7 0 0 1 11.6-2L20 12M4 12l2.8 5a7 7 0 0 0 11.6-2"/></svg></button></div>
+    </header>
+
+    <main id="home">
+      <section class="scoreboard-shell" id="scores">
+        <div class="section-heading">
+          <div><p class="eyebrow">MONDAY, NOVEMBER 2, 2026</p><h1>The game, <span>as it happens.</span></h1></div>
+          <div class="score-heading-right"><span class="live-count"><span class="live-dot"></span><b id="live-count">2</b> matches live</span><button class="text-button" id="manage-scores" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z"/></svg>Update scores</button></div>
+        </div>
+
+        <section class="featured-match" id="featured-match" aria-label="Featured live match"></section>
+
+        <div class="content-grid">
+          <section class="matches-area" aria-label="Cricket matches">
+            <div class="match-toolbar"><div class="tabs" role="tablist" aria-label="Filter matches"><button class="tab active" role="tab" aria-selected="true" data-filter="ALL">All matches <span id="all-count">0</span></button><button class="tab" role="tab" aria-selected="false" data-filter="LIVE">Live <span id="tab-live-count">0</span></button><button class="tab" role="tab" aria-selected="false" data-filter="UPCOMING">Upcoming <span id="upcoming-count">0</span></button><button class="tab" role="tab" aria-selected="false" data-filter="RESULT">Results <span id="result-count">0</span></button></div><label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="match-search" type="search" placeholder="Find a match" aria-label="Find a match" /></label></div>
+            <div class="match-list" id="match-list"></div>
+            <p class="data-note"><span class="data-note-mark">i</span> Scores, weather, and pitch reports are sample data. Open any match for its conditions or use Update scores to save score changes.</p>
+          </section>
+
+          <aside class="sidebar">
+            <section class="sidebar-block" id="series"><div class="sidebar-title"><h2>Series watch</h2><button class="subtle-link" type="button">All series <span>↗</span></button></div><a class="series-item" href="#scores"><span class="series-icon series-icon-green">IND<br />AUS</span><span class="series-copy"><strong>Australia in India</strong><small>1st T20I · Chennai</small></span><span class="series-state"><i></i>LIVE</span></a><a class="series-item" href="#scores"><span class="series-icon series-icon-red">ENG<br />SA</span><span class="series-copy"><strong>South Africa in England</strong><small>2nd Test · Lord's</small></span><span class="series-state"><i></i>LIVE</span></a><a class="series-item" href="#scores"><span class="series-icon series-icon-gold">PAK<br />NZ</span><span class="series-copy"><strong>New Zealand in Pakistan</strong><small>3rd ODI · Lahore</small></span><span class="series-state upcoming-state">8:30 PM</span></a></section>
+            <section class="editorial" id="news"><div class="editorial-image" role="img" aria-label="Cricket ground under stadium lights"></div><div class="editorial-copy"><span class="editorial-tag">THE BIG STORY</span><h2>One over. One moment. Everything changes.</h2><p>Catch every turn of the game, right as it happens.</p><a href="#scores" class="editorial-link">Explore today's cricket <span>→</span></a></div></section>
+            <section class="quick-stats"><div class="sidebar-title"><h2>Today at a glance</h2><span class="stats-date">02 NOV</span></div><div class="stat-row"><span>Matches today</span><strong>06</strong></div><div class="stat-row"><span>Live right now</span><strong class="stat-live">02 <i class="live-dot"></i></strong></div><div class="stat-row"><span>Next match</span><strong>8:30 PM</strong></div></section>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer><span>boundary<span class="brand-period">.</span></span><span>Made for the love of the game.</span><span>Scores update locally</span></footer>
+
+    <dialog class="match-dialog" id="match-dialog" aria-labelledby="dialog-title"><button class="dialog-close icon-button" type="button" aria-label="Close match details"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m18 6-12 12M6 6l12 12"/></svg></button><div id="dialog-content"></div></dialog>
+    <dialog class="update-dialog" id="update-dialog" aria-labelledby="update-title"><button class="dialog-close icon-button" type="button" aria-label="Close score editor"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m18 6-12 12M6 6l12 12"/></svg></button><div class="update-header"><p class="eyebrow">SCOREKEEPER</p><h2 id="update-title">Update a score</h2><p>Changes are saved on this device.</p></div><form id="score-form"><label class="field-label" for="match-select">Match</label><select id="match-select" name="match" required></select><label class="field-label" for="team-select">Batting team</label><select id="team-select" name="team" required></select><div class="score-fields"><label><span class="field-label">Runs</span><input name="runs" type="number" min="0" max="999" required /></label><label><span class="field-label">Wickets</span><input name="wickets" type="number" min="0" max="10" required /></label><label><span class="field-label">Overs</span><input name="overs" type="text" inputmode="decimal" pattern="[0-9]+\.[0-5]" placeholder="18.4" required /><small>Overs.balls</small></label></div><p class="form-error" id="form-error" role="alert"></p><button class="submit-button" type="submit">Save score update <span>→</span></button></form></dialog>
+  </body>
+</html>
