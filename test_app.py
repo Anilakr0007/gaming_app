@@ -1,6 +1,8 @@
 import json
 import tempfile
+import threading
 import unittest
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from unittest.mock import patch
 
@@ -42,6 +44,23 @@ class ScoreUpdateTests(unittest.TestCase):
     def test_rejects_team_outside_match(self):
         with self.assertRaisesRegex(ValueError, "Choose a team"):
             app.update_score("test-match", {"team": "England", "runs": 24, "wickets": 2, "overs": "4.0"})
+
+    def test_concurrent_updates_preserve_both_teams(self):
+        start = threading.Barrier(2)
+
+        def update(team, runs):
+            start.wait()
+            return app.update_score("test-match", {"team": team, "runs": runs, "wickets": 1, "overs": "2.0"})
+
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            first = executor.submit(update, "India", 24)
+            second = executor.submit(update, "Australia", 18)
+            first.result()
+            second.result()
+
+        scores = app.load_matches()[0]["scores"]
+        self.assertEqual(scores["India"]["runs"], 24)
+        self.assertEqual(scores["Australia"]["runs"], 18)
 
 
 if __name__ == "__main__":

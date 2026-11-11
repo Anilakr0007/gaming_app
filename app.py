@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent
 DATA_FILE = ROOT / "matches.json"
-DATA_LOCK = threading.Lock()
+DATA_LOCK = threading.RLock()
 PORT = 8000
 OVERS_PATTERN = re.compile(r"^(0|[1-9]\d*)\.[0-5]$")
 
@@ -38,21 +38,22 @@ def update_score(match_id: str, payload: dict) -> dict:
     if not isinstance(overs, str) or not OVERS_PATTERN.fullmatch(overs):
         raise ValueError("Overs must use cricket notation, for example 18.4.")
 
-    matches = load_matches()
-    match = next((item for item in matches if item["id"] == match_id), None)
-    if match is None:
-        raise KeyError("Match not found.")
-    if team_name not in match["teams"]:
-        raise ValueError("Choose a team in this match.")
+    with DATA_LOCK:
+        matches = load_matches()
+        match = next((item for item in matches if item["id"] == match_id), None)
+        if match is None:
+            raise KeyError("Match not found.")
+        if team_name not in match["teams"]:
+            raise ValueError("Choose a team in this match.")
 
-    over_count, balls = (int(part) for part in overs.split("."))
-    total_balls = over_count * 6 + balls
-    run_rate = runs * 6 / total_balls if total_balls else 0
-    match["scores"][team_name].update(
-        {"runs": runs, "wickets": wickets, "overs": overs, "run_rate": f"{run_rate:.2f}"}
-    )
-    save_matches(matches)
-    return match
+        over_count, balls = (int(part) for part in overs.split("."))
+        total_balls = over_count * 6 + balls
+        run_rate = runs * 6 / total_balls if total_balls else 0
+        match["scores"][team_name].update(
+            {"runs": runs, "wickets": wickets, "overs": overs, "run_rate": f"{run_rate:.2f}"}
+        )
+        save_matches(matches)
+        return match
 
 
 class ScoreboardHandler(BaseHTTPRequestHandler):
